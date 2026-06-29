@@ -1,8 +1,8 @@
 import { Check } from "lucide-react";
 
 const F_SANS = "var(--font-sans), Open Sans, sans-serif";
-const GOLD = "var(--color-gold)";
-const PRIMARY = "var(--color-primary)";
+const GOLD = "var(--color-gold, #C9A96E)";
+const PRIMARY = "var(--color-primary, #3A2A0E)";
 
 const units = [
   {
@@ -16,7 +16,6 @@ const units = [
       "Premium Specifications",
       "Luxury Finishes",
     ],
-    isPopular: false,
   },
   {
     type: "4 BHK Residences",
@@ -29,9 +28,19 @@ const units = [
       "Premium Specifications",
       "Luxury Finishes",
     ],
-    isPopular: true,
   },
 ];
+
+const CurvedCorners = () => (
+  <svg 
+    className="absolute bottom-0 left-0 right-0 w-full z-20 pointer-events-none" 
+    viewBox="0 0 100 12" 
+    preserveAspectRatio="none" 
+    style={{ height: '24px', fill: 'var(--color-bg-muted)' }}
+  >
+    <path d="M0,12 L0,0 C15,12 35,12 50,12 C65,12 85,12 100,0 L100,12 Z" />
+  </svg>
+);
 
 const Pricing = ({ setIsOpen }) => {
   return (
@@ -48,116 +57,94 @@ const Pricing = ({ setIsOpen }) => {
         }}
       />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <span style={{
-            display: "inline-block", padding: "4px 16px",
-            background: "var(--color-gold-bg)", borderRadius: "50px",
-            fontSize: "11px", fontWeight: "700", color: "var(--color-gold)",
-            fontFamily: "var(--font-jost), Montserrat, sans-serif",
-            letterSpacing: "0.1em", textTransform: "uppercase",
-            border: "1px solid var(--color-gold-light)", marginBottom: "10px",
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* NEW HEADING STYLE */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }} data-aos="fade-up">
+          <h2 style={{
+            fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
+            color: '#684C1B', letterSpacing: '0.1em',
+            textTransform: 'uppercase', margin: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            LUXURY RESIDENCES
-          </span>
-          <h2
-            className="font-bold mb-4"
-            style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", color: PRIMARY, fontSize: "26px", letterSpacing: "-0.01em" }}
-          >
-            Configurations &amp; <span style={{ color: GOLD }}>Pricing</span>
+            Configurations &amp; Pricing
           </h2>
-          {/* <p style={{ fontFamily: F_SANS, fontSize: "13px", color: "#6b7280", marginBottom: "4px" }}>
-            Eldeco Camelot offers thoughtfully crafted homes designed for modern urban living
-          </p> */}
-
-          <div className="w-20 h-1 mx-auto rounded-full mb-4" style={{ background: GOLD }} />
-          {/* <p style={{ fontFamily: F_SANS, fontSize: "13px", color: "#6b7280", marginBottom: "4px" }}>
-            Phase 5 Launch Expected
-          </p>
-          <p style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", fontSize: "18px", fontWeight: "800", color: GOLD }}>
-            ~₹24,000 – 27,000 psf <span style={{ fontSize: "12px", fontWeight: "600", color: "#9ca3af" }}>(All Inclusive)</span>
-          </p> */}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
-          {units.map((unit, idx) => (
-            <div
-              key={idx}
-              data-aos="fade-up"
-              data-aos-delay={idx * 150}
-              className={`group pricing-card relative bg-white rounded-lg overflow-hidden border border-[#D5C2A8] transition-all duration-500 ${unit.isPopular ? "lg:scale-105 z-20" : "z-10"}`}
-            >
-              {unit.isPopular && (
-                <div
-                  className="absolute top-4 right-6 px-3 py-1 rounded-full text-white text-[9px] font-bold tracking-widest uppercase z-30"
-                  style={{ background: GOLD }}
-                >
-                  Most Preferred
-                </div>
-              )}
+        {/* COMBINED PRICING BLOCK */}
+        <div 
+          className="relative bg-white rounded-lg border border-[#D5C2A8] shadow-lg max-w-4xl mx-auto overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          style={{ paddingBottom: '24px' }} // Space for curved corners
+        >
+          {/* Top accent line */}
+          <div style={{
+            position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
+            background: `linear-gradient(90deg, ${GOLD}, #F9E08A)`,
+            zIndex: 10,
+          }} />
 
-              <div className="relative p-7 pb-4 border-b border-gray-50 pt-12">
-                <div
-                  className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity"
-                  style={{ background: `linear-gradient(135deg, ${PRIMARY} 0%, transparent 100%)` }}
-                />
-                <h3
-                  className="text-xl font-bold mb-1 relative z-10"
-                  style={{ fontFamily: F_SANS, color: PRIMARY, letterSpacing: "0.02em" }}
-                >
-                  {unit.type}
-                </h3>
-                {unit.subtitle && (
-                  <p className="text-[15px] text-gray-500 relative z-10 mb-2 leading-tight" style={{ fontFamily: F_SANS }}>
-                    {unit.subtitle}
-                  </p>
-                )}
-                {!unit.subtitle && (
-                  <div className="flex items-center gap-2 relative z-10">
-                    <span className="text-gray-400 text-[11px] uppercase tracking-wider" style={{ fontFamily: F_SANS }}>Size:</span>
+          {/* Grid Container for 2 Units */}
+          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            {units.map((unit, idx) => (
+              <div key={idx} className="p-8 md:p-10 relative flex flex-col justify-between">
+                <div>
+                  {/* Title & Size */}
+                  <h3
+                    className="text-2xl font-bold mb-2"
+                    style={{ fontFamily: F_SANS, color: PRIMARY, letterSpacing: "0.02em" }}
+                  >
+                    {unit.type}
+                  </h3>
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold" style={{ fontFamily: F_SANS }}>Size:</span>
                     <p className="text-sm font-semibold" style={{ fontFamily: F_SANS, color: PRIMARY }}>
                       {unit.size}
                     </p>
                   </div>
-                )}
-              </div>
 
-              <div className="p-7 pt-6">
-                <div className="mb-6">
-                  <span className="text-[10px] text-gray-400 uppercase tracking-[0.15em] font-medium block mb-1" style={{ fontFamily: F_SANS }}>Starting At</span>
-                  <div className="flex items-center gap-2 sm:gap-3 flex-nowrap whitespace-nowrap">
-                    {unit.oldPrice && (
-                      <span className="text-sm sm:text-lg line-through font-medium opacity-60" style={{ fontFamily: F_SANS, color: GOLD }}>
-                        {unit.oldPrice}
-                      </span>
-                    )}
-                    <p className="text-lg sm:text-2xl font-bold" style={{ fontFamily: F_SANS, color: GOLD }}>
-                      {unit.price}
-                    </p>
+                  {/* Price Section */}
+                  <div className="mb-8">
+                    <span className="text-[10px] text-gray-400 uppercase tracking-[0.15em] font-medium block mb-1" style={{ fontFamily: F_SANS }}>Starting At</span>
+                    <div className="flex items-baseline gap-3">
+                      {unit.oldPrice && (
+                        <span className="text-sm md:text-base line-through font-medium opacity-60" style={{ fontFamily: F_SANS, color: GOLD }}>
+                          {unit.oldPrice}
+                        </span>
+                      )}
+                      <p className="text-2xl md:text-3xl font-extrabold" style={{ fontFamily: F_SANS, color: GOLD }}>
+                        {unit.price}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Features List */}
+                  <div className="space-y-4 mb-8">
+                    {unit.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-start gap-3">
+                        <div className="mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-amber-50">
+                          <Check size={12} strokeWidth={3} style={{ color: GOLD }} />
+                        </div>
+                        <span className="text-gray-700 font-medium text-[14px]" style={{ fontFamily: F_SANS }}>{feature}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="space-y-3 mb-8">
-                  {['Unlock Pricing & Floor Plans', 'Attractive Payment Plan', 'Premium Luxury Residence'].map((feature, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-3">
-                      <div className="mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-amber-50">
-                        <Check size={12} strokeWidth={3} style={{ color: GOLD }} />
-                      </div>
-                      <span className="text-gray-700 font-medium text-[14px]" style={{ fontFamily: F_SANS }}>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
+                {/* Button */}
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="btn-gold w-full py-3 text-sm tracking-widest uppercase transition-all duration-300"
-                  style={{ borderRadius: "1rem" }}
+                  className="btn-gold w-full py-3.5 text-sm tracking-widest uppercase transition-all duration-300 font-bold"
+                  style={{ borderRadius: "8px" }}
                 >
                   {unit.btnText}
                 </button>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Curved Corners Cutout at Bottom */}
+          <CurvedCorners />
         </div>
       </div>
     </section>
