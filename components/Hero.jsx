@@ -363,10 +363,11 @@ const Hero = ({ setIsOpen }) => {
         {/* Bullet Points */}
         <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {[
-            'Status: New Launch',
-            '1.8 Acres Area',
-            'Only 2 Towers With Exclusive 95 Residences',
-            'G+20 High-Rise Community'
+            '270° Green View Residences',
+            'Expansive Wraparound Balconies',
+            'VRV Air-Conditioned Luxury Homes',
+            '3 Car Parks with Every Residence',
+            'Booking Amount ₹10 Lakhs*'
           ].map((text, i) => (
             <div key={i} className="hero-bullet-item" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #C9A96E)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, backgroundColor: '#fff', borderRadius: '50%', padding: '2px' }}>
@@ -381,7 +382,7 @@ const Hero = ({ setIsOpen }) => {
 
         {/* Restored Subtitle */}
         <p className="hero-price-line" style={{ marginBottom: '0px' }}>
-          3 &amp; 4 BHK Luxurious Apartments
+          3 &amp; 4 BR   Luxurious Apartments
         </p>
 
         {/* CTA Row */}

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import {
-  Utensils, Activity, Footprints, Video, BookOpen, Zap, Smile, Users
+  Castle, Droplets, MapPin, TreePine, Wallpaper, Gamepad2, Waves, Droplet, Coffee, PartyPopper
 } from 'lucide-react'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -21,14 +21,14 @@ const CurvedCorners = ({ bg = '#fff', color = '#e5e7eb' }) => {
 }
 
 const newAmenities = [
-  { icon: Utensils,     title: 'Restaurants',                desc: 'Fine dining and casual eateries within the premises for a delightful culinary experience.' },
-  { icon: Activity,     title: 'Medical Facility',           desc: 'On-site medical assistance and healthcare center for emergencies and regular check-ups.' },
-  { icon: Footprints,   title: 'Jogging Track',              desc: 'Well-laid tracks surrounded by greenery for your daily run and fitness routine.' },
-  { icon: Video,        title: '24/7 Security',              desc: 'Advanced surveillance and manned security to ensure complete safety and peace of mind.' },
-  { icon: BookOpen,     title: 'Educational Institutes',     desc: 'Proximity to top schools and educational centers for a bright future.' },
-  { icon: Zap,          title: 'Uninterrupted Power Supply', desc: 'Uninterrupted power backup to ensure a seamless and comfortable living experience.' },
-  { icon: Smile,        title: 'Dedicated Play Area for Kids',desc: 'Dedicated and safe play zones equipped with engaging activities for children.' },
-  { icon: Users,        title: 'Community Club',             desc: 'A vibrant community club for socializing, events, and recreational activities.' },
+  { icon: Castle,       title: 'Excalibur Clubhouse',        desc: 'A premium clubhouse offering world-class leisure and recreational facilities.' },
+  { icon: Droplets,     title: 'Grand Water Feature',        desc: 'Beautifully designed aquatic elements that add serenity to the landscape.' },
+  { icon: MapPin,       title: 'Central Plaza',              desc: 'A bustling community hub for social interactions and evening strolls.' },
+  { icon: TreePine,     title: 'Peripheral Greens',          desc: 'Lush green pathways bordering the property for a refreshing natural environment.' },
+  { icon: Wallpaper,    title: 'Feature Wall',               desc: 'Artistic feature walls that enhance the aesthetic appeal of the surroundings.' },
+  { icon: Gamepad2,     title: 'Kid\'s Play Area',           desc: 'Safe, engaging, and fun-filled outdoor spaces dedicated to children.' },
+  { icon: Droplet,      title: 'Kids Pool',                  desc: 'A dedicated, shallow pool designed specifically for the safety and fun of little ones.' },
+  { icon: Waves,        title: 'Swimming Pool',              desc: 'An expansive pool for adults to relax, swim, and stay fit.' },
 ]
 
 const Amenities = () => {

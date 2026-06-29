@@ -42,9 +42,9 @@ const CurvedCorners = ({ bg = '#fff' }) => {
 }
 
 const infoItems = [
-  { label: 'Total Area',         value: '1.8 Acres', bgColor: '#FDF8F6' },
-  { label: 'Residences',         value: 'Only 95 Exclusive Residences', bgColor: '#FFFDF2' },
-  { label: 'Towers',             value: '2 Boutique High-Stilt Towers (G+20)', bgColor: '#F4FAF4' },
+  { label: 'Status',             value: 'New Launch', bgColor: '#FDF8F6' },
+  { label: 'Land Parcel',        value: '1.8 Acres', bgColor: '#FFFDF2' },
+  { label: 'Configuration',      value: '3 & 4 BHK', bgColor: '#F4FAF4' },
   { label: 'Architect',          value: 'Hafeez Contractor', bgColor: '#F2FAFD' },
 ]
 
