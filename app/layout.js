@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
               "author": {
                 "@type": "Organization",
                 "name": "Proptiger Marketing Services Pvt Ltd",
-                "url": "https://www.proptiger.com/Delhi/Sector 17, Dwarka-road/Eldeco-district-25"
+                "url": "https://www.proptiger.com/Delhi/Sector 17, Dwarka-road/Eldeco-camelot"
               },
               "publisher": {
                 "@type": "Organization",
