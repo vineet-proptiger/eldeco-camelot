@@ -117,12 +117,12 @@ const IconWaves = () => (
 )
 
 const highlights = [
-  { title: 'PRIME LOCATION', desc: 'Facing DDA Park & Sports Complex.', Icon: IconHome },
-  { title: 'GRAND CLUBHOUSE', desc: '25000 SqFt Luxury Clubhouse With Premium Amenities.', Icon: IconBuilding },
-  { title: 'KIDS PLAY AREA', desc: 'Separate Zones for Kids with safe and engaging activities.', Icon: IconTrees },
-  { title: 'GRAND ENTRANCE', desc: 'Triple Heighted Entrance Lobby featuring a majestic arrival court.', Icon: IconMountain },
-  { title: 'HEALTH & WELLNESS', desc: 'Indoor Air Quality Management system for a healthier lifestyle.', Icon: IconSunCloud },
-  { title: 'CONNECTIVITY', desc: 'Excellent Metro & Highway Connectivity for seamless travel.', Icon: IconSmart },
+  { title: 'WRAPAROUND BALCONIES', desc: 'Expansive Wraparound Balconies with Panoramic Views.', Icon: IconSunCloud },
+  { title: '270° VISTAS', desc: 'Approx. 270° Unobstructed Green & Skyline Vistas.', Icon: IconTrees },
+  { title: 'VRV AIR-CONDITIONING', desc: 'Premium VRV Air-Conditioning for Superior Comfort.', Icon: IconWind },
+  { title: 'COVERED PARKING', desc: '3 Dedicated Covered Car Parks for Every Residence.', Icon: IconHome },
+  { title: '11-FOOT CEILING', desc: 'Approx. 11-Foot Floor-to-Floor Height for Grand Living.', Icon: IconMountain },
+  { title: 'TWIN-TOWER', desc: 'Twin-Tower Low-Density Development with Enhanced Privacy.', Icon: IconBuilding },
 ]
 
 const Highlights = ({ setIsOpen }) => (
