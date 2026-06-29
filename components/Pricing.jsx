@@ -31,16 +31,15 @@ const units = [
   },
 ];
 
-const CurvedCorners = () => (
-  <svg 
-    className="absolute bottom-0 left-0 right-0 w-full z-20 pointer-events-none" 
-    viewBox="0 0 100 12" 
-    preserveAspectRatio="none" 
-    style={{ height: '24px', fill: 'var(--color-bg-muted)' }}
-  >
-    <path d="M0,12 L0,0 C15,12 35,12 50,12 C65,12 85,12 100,0 L100,12 Z" />
-  </svg>
-);
+const BottomCurvedCorners = ({ bg = 'var(--color-bg-muted)', color = '#D5C2A8' }) => {
+  const corners = [
+    { bottom: '-1px', left: '-1px', borderRight: `1px solid ${color}`, borderTop: `1px solid ${color}`, borderTopRightRadius: '18px' },
+    { bottom: '-1px', right: '-1px', borderLeft: `1px solid ${color}`, borderTop: `1px solid ${color}`, borderTopLeftRadius: '18px' },
+  ]
+  return corners.map((c, i) => (
+    <span key={i} style={{ position: 'absolute', ...c, width: '22px', height: '22px', background: bg, display: 'block', zIndex: 20 }} />
+  ))
+}
 
 const Pricing = ({ setIsOpen }) => {
   return (
@@ -72,10 +71,9 @@ const Pricing = ({ setIsOpen }) => {
 
         {/* COMBINED PRICING BLOCK */}
         <div 
-          className="relative bg-white rounded-lg border border-[#D5C2A8] shadow-lg max-w-4xl mx-auto overflow-hidden"
+          className="relative bg-white rounded-t-lg border border-[#D5C2A8] shadow-lg max-w-4xl mx-auto overflow-hidden"
           data-aos="fade-up"
           data-aos-delay="100"
-          style={{ paddingBottom: '24px' }} // Space for curved corners
         >
           {/* Top accent line */}
           <div style={{
@@ -144,7 +142,7 @@ const Pricing = ({ setIsOpen }) => {
           </div>
 
           {/* Curved Corners Cutout at Bottom */}
-          <CurvedCorners />
+          <BottomCurvedCorners />
         </div>
       </div>
     </section>
