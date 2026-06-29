@@ -30,18 +30,9 @@ const Hero = ({ setIsOpen }) => {
           display: block;
         }
 
-        /* Dark gradient overlay — bottom heavy so text is legible */
+        /* Disable full-screen overlay since gradient is only behind text */
         .hero-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            to right,
-            rgba(0,0,0,0.72) 0%,
-            rgba(0,0,0,0.45) 55%,
-            rgba(0,0,0,0.10) 100%
-          );
-          z-index: 2;
-          pointer-events: none;
+          display: none;
         }
 
         /* Content block — sits over the image */
@@ -49,9 +40,17 @@ const Hero = ({ setIsOpen }) => {
           position: absolute;
           bottom: 0;
           left: 0;
-          right: 0;
           z-index: 10;
-          padding: 0 44px 72px;
+          padding: 100px 80px 72px 44px;
+          width: 100%;
+          max-width: 800px;
+          background: radial-gradient(
+            100% 100% at 0% 100%,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.7) 55%,
+            rgba(0,0,0,0.2) 75%,
+            transparent 90%
+          );
         }
 
         /* Main title */
