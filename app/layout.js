@@ -51,11 +51,11 @@ export default function RootLayout({ children }) {
               "@type": "Article",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://prestigepalmcourtmahalaxmi.in/"
+                "@id": "https://www.eldecocamelot.co.in/"
               },
               "headline": "Eldeco Camelot | 3 & 4 BHK Luxury Apartments in Sector 17 Dwarka Delhi",
               "description": "Eldeco Camelot is all set to be the most experiential and premium residential project in the prime corridor of Sector 17, Dwarka.",
-              "image": "https://prestigepalmcourtmahalaxmi.in/_next/image?url=%2Fimages%2Fhero%2Fbanner1.webp&w=1200&q=75",
+              "image": "https://www.eldecocamelot.co.in/_next/image?url=%2Fimages%2Fhero%2Fbanner1.webp&w=1200&q=75",
               "author": {
                 "@type": "Organization",
                 "name": "Proptiger Marketing Services Pvt Ltd",

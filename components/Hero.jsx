@@ -364,9 +364,9 @@ const Hero = ({ setIsOpen }) => {
         {/* Bullet Points */}
         <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {[
+            'Status: New Launch',
             '1.8 Acres Area',
             'Only 2 Towers With Exclusive 95 Residences',
-            'Low-Density Concept',
             'G+20 High-Rise Community'
           ].map((text, i) => (
             <div key={i} className="hero-bullet-item" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

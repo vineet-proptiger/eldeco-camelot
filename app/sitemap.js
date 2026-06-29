@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'http://Eldecodistrict25Sector 17, Dwarka.co.in'
+  const base = 'https://www.eldecocamelot.co.in'
 
   return [
     {

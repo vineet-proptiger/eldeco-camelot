@@ -5,7 +5,7 @@ export default function robots() {
       allow: '/',
       disallow: '',
     },
-    sitemap: 'http://Eldecodistrict25Sector 17, Dwarka.co.in/sitemap.xml',
+    sitemap: 'https://www.eldecocamelot.co.in/sitemap.xml',
   }
 }
 
