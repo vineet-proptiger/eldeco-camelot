@@ -597,18 +597,15 @@
     mask-repeat: no-repeat;
   }
 
-  /* Convert box-shadow to filter drop-shadow because mask clips box-shadow */
+  /* Remove box-shadow because mask clips it. Avoid drop-shadow due to iOS Safari rendering bug. */
   .btn-gold, .btn-primary {
     box-shadow: none !important;
-    filter: drop-shadow(0 4px 10px rgba(201, 169, 110, 0.35));
   }
   .btn-gold:hover, .btn-primary:hover, .btn-gold-outline:hover {
     box-shadow: none !important;
-    filter: drop-shadow(0 8px 20px rgba(201, 169, 110, 0.30));
   }
   .btn-gold:active, .btn-primary:active {
     box-shadow: none !important;
-    filter: drop-shadow(0 2px 6px rgba(201, 169, 110, 0.20));
   }
 }
 

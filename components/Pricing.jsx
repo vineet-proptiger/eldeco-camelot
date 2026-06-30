@@ -8,7 +8,7 @@ const units = [
   {
     type: "3 BHK Residences",
     size: "On Request",
-    price: "₹ 7.33 Cr*",
+    price: "₹ 7.42 Cr*",
     oldPrice: null,
     btnText: "Get Details",
     features: [

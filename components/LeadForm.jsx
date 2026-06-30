@@ -7,7 +7,7 @@ import { buildTrackingFields } from '../lib/formMeta'
 const GOLD = 'var(--color-gold)'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 
-const inputClass = 'form-input mb-3 shadow-sm'
+const inputClass = 'w-full mb-3 border-0 border-b-2 border-gray-200 bg-transparent text-[14.5px] px-0 py-2.5 rounded-none outline-none focus:outline-none focus:ring-0 focus:border-[var(--color-gold)] transition-colors'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 
 const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
@@ -83,7 +83,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
 
       {error && <p className="text-red-500 text-xs mt-1" style={{ fontFamily: F_SANS }}>{error}</p>}
 
-      <div className="flex items-start gap-2 mt-3">
+      <div className="flex items-start gap-2 mt-2">
         <input type="checkbox" id="privacy-lead" required defaultChecked className="mt-0.5 shrink-0" style={{ accentColor: GOLD }} />
         <label htmlFor="privacy-lead" className="text-xs text-gray-500 leading-relaxed cursor-pointer" style={{ fontFamily: F_SANS }}>
           I agree to receive updates as per the <Link href="/privacy-policy" className="underline hover:text-[var(--color-gold)]" title="Read our Privacy Policy">Privacy Policy</Link>
@@ -91,8 +91,8 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
       </div>
 
       <button type="submit" disabled={loading}
-        className="btn-gold mt-4"
-        style={{ padding: '11px 24px', width: '80%', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }}>
+        className="btn-gold mt-3 w-[85%] mx-auto flex justify-center items-center gap-2"
+        style={{ padding: '11px 24px' }}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
         </svg>

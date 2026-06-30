@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
-// import Image from 'next/image'
+import Image from 'next/image'
 import { X } from 'lucide-react'
 import LeadForm from './LeadForm'
-// import { popupImage } from '../lib/images'
+import { logoImages } from '../lib/images'
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -40,7 +40,7 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
       onClick={() => setIsOpen(false)}
     >
       <div
-        className="relative bg-white w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col sm:flex-row"
+        className="relative bg-white w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col"
         style={{
           maxWidth: '420px',
           width: '92vw',
@@ -49,49 +49,39 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* LEFT - Image */}
-        {/* <div className="hidden sm:block sm:w-[44%] shrink-0 relative" style={{ background: '#0d1117', minHeight: '100%' }}>
-          <Image src={popupImage} alt="Eldeco Camelot" fill className="object-cover" sizes="(max-width: 768px) 0vw, 45vw" />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.85) 0%, rgba(26,26,46,0.1) 60%)' }} />
-          <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-10">
-            <p className="text-[10px] font-semibold tracking-[3px] uppercase opacity-80 mb-1" style={{ fontFamily: F_SANS, color: 'var(--color-gold)' }}>Eldeco Camelot</p>
-            <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 500, opacity: 0.85 }}>2, 3 & 4 BHK ₹ 1.5 Cr*</p>
-          </div>
-        </div> */}
-
-        {/* RIGHT - Form */}
         <div className="flex-1 flex flex-col overflow-y-auto">
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-3 right-3 z-10 text-gray-500 hover:text-gray-900 transition-colors bg-white rounded-full w-8 h-8 flex items-center justify-center shadow border border-gray-100"
+            className="absolute top-4 right-4 z-10 text-gray-400 hover:text-gray-900 transition-colors bg-gray-50 hover:bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center shadow-sm border border-gray-200"
           >
             <X size={16} />
           </button>
 
-          {/* Mobile strip */}
-          {/* <div className="sm:hidden w-full h-56 relative shrink-0">
-            <Image src={popupImage} alt="Eldeco Camelot" fill className="object-cover" style={{ objectPosition: 'top' }} sizes="100vw" />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.6) 0%, transparent 60%)' }} />
-            <div className="absolute bottom-3 left-4 text-white z-10">
-              <p className="text-[9px] uppercase tracking-[2px] opacity-80" style={{ fontFamily: F_SANS }}>Eldeco Camelot</p>
-              <p className="text-[11px] font-medium opacity-85" style={{ fontFamily: F_JOST }}>2, 3 & 4 BHK ₹ 1.5 Cr*</p>
-            </div>
-          </div> */}
-
-          <div className="p-6 sm:p-8 flex flex-col justify-center flex-1">
-            <div className="text-center mb-6">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug tracking-tight" style={{ fontFamily: F_JOST }}>
-                Book A Free Site Visit
-              </h3>
-              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                <span style={{
-                  display: 'block', width: '36px', height: '3px',
-                  background: 'linear-gradient(90deg, var(--color-gold), var(--color-gold-light))',
-                  borderRadius: '2px',
-                }} />
+          <div className="p-6 sm:p-7 flex flex-col justify-center flex-1 relative">
+            
+            {/* Compact Side-by-Side Header */}
+            <div className="flex items-center justify-start gap-3 sm:gap-4 mb-6 border-b border-gray-100 pb-4 mt-2">
+              <div className="relative w-[90px] sm:w-[100px] h-10 sm:h-12 shrink-0">
+                <Image 
+                  src={logoImages.tarc} 
+                  alt="Eldeco Camelot Logo" 
+                  fill 
+                  className="object-contain" 
+                />
+              </div>
+              <div className="flex items-center border-l border-gray-200 pl-3 sm:pl-4 min-h-[32px] sm:min-h-[40px]">
+                <h3 
+                  className="text-[13.5px] sm:text-[14.5px] font-bold text-gray-800 tracking-[0.5px] sm:tracking-[1px] uppercase whitespace-normal sm:whitespace-nowrap leading-tight" 
+                  style={{ fontFamily: F_JOST }}
+                >
+                  Book A Free <span className="text-[var(--color-gold)]">Site Visit</span>
+                </h3>
               </div>
             </div>
+
+            {/* Form Component - Untouched Logic */}
             <LeadForm formName="Popup Modal" btnText="Submit Details" />
+            
           </div>
         </div>
       </div>
@@ -100,3 +90,5 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
 }
 
 export default EnquireModal
+
+

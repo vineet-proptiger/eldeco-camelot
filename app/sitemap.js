@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://www.eldecocamelot.co.in'
+  const base = 'https://lntvayamwagleestate.com/'
 
   return [
     {

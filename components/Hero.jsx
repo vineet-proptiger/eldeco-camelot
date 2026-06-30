@@ -393,7 +393,7 @@ const Hero = ({ setIsOpen }) => {
             className="btn-gold-outline hero-btn-one"
             style={{ fontSize: '14px', padding: '11px 22px', pointerEvents: 'none', fontWeight: '700', textTransform: 'none' }}
           >
-            Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>₹ 7.33 Cr*</span>
+            Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>₹ 7.42 Cr*</span>
           </div>
 
           {/* Button 2 — Popup Trigger (global btn-brand) */}
