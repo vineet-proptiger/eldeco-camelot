@@ -31,8 +31,10 @@ const units = [
   },
 ];
 
-const BottomCurvedCorners = ({ bg = 'var(--color-bg-muted)', color = '#D5C2A8' }) => {
+const CurvedCorners = ({ bg = 'var(--color-bg-muted)', color = '#D5C2A8' }) => {
   const corners = [
+    { top: '-1px', left: '-1px', borderRight: `1px solid ${color}`, borderBottom: `1px solid ${color}`, borderBottomRightRadius: '18px' },
+    { top: '-1px', right: '-1px', borderLeft: `1px solid ${color}`, borderBottom: `1px solid ${color}`, borderBottomLeftRadius: '18px' },
     { bottom: '-1px', left: '-1px', borderRight: `1px solid ${color}`, borderTop: `1px solid ${color}`, borderTopRightRadius: '18px' },
     { bottom: '-1px', right: '-1px', borderLeft: `1px solid ${color}`, borderTop: `1px solid ${color}`, borderTopLeftRadius: '18px' },
   ]
@@ -71,16 +73,11 @@ const Pricing = ({ setIsOpen }) => {
 
         {/* COMBINED PRICING BLOCK */}
         <div 
-          className="relative bg-white rounded-t-lg border border-[#D5C2A8] shadow-lg max-w-4xl mx-auto overflow-hidden"
+          className="relative bg-white border border-[#D5C2A8] max-w-4xl mx-auto overflow-hidden"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          {/* Top accent line */}
-          <div style={{
-            position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
-            background: `linear-gradient(90deg, ${GOLD}, #F9E08A)`,
-            zIndex: 10,
-          }} />
+          <CurvedCorners />
 
           {/* Grid Container for 2 Units */}
           <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
@@ -141,8 +138,7 @@ const Pricing = ({ setIsOpen }) => {
             ))}
           </div>
 
-          {/* Curved Corners Cutout at Bottom */}
-          <BottomCurvedCorners />
+          {/* Curved Corners Cutout */}
         </div>
       </div>
     </section>
