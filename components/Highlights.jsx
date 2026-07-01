@@ -117,12 +117,12 @@ const IconWaves = () => (
 )
 
 const highlights = [
-  { title: 'WRAPAROUND BALCONIES', desc: 'Expansive Wraparound Balconies with Panoramic Views.', Icon: IconSunCloud },
-  { title: '270° VISTAS', desc: 'Approx. 270° Unobstructed Green & Skyline Vistas.', Icon: IconTrees },
-  { title: 'VRV AIR-CONDITIONING', desc: 'Premium VRV Air-Conditioning for Superior Comfort.', Icon: IconWind },
-  { title: 'COVERED PARKING', desc: '3 Dedicated Covered Car Parks for Every Residence.', Icon: IconHome },
-  { title: '11-FOOT CEILING', desc: 'Approx. 11-Foot Floor-to-Floor Height for Grand Living.', Icon: IconMountain },
-  { title: 'TWIN-TOWER', desc: 'Twin-Tower Low-Density Development with Enhanced Privacy.', Icon: IconBuilding },
+  { title: 'WRAPAROUND BALCONIES', desc: 'Enjoy expansive wraparound balconies designed to bring in abundant natural light and fresh air while offering stunning panoramic views.', Icon: IconSunCloud },
+  { title: '270° VISTAS', desc: 'Wake up to approximately 270° of uninterrupted green landscapes and breathtaking skyline vistas from the comfort of your home.', Icon: IconTrees },
+  { title: 'VRV AIR-CONDITIONING', desc: 'Experience effortless comfort with premium VRV air-conditioning that ensures efficient and consistent cooling throughout your residence.', Icon: IconWind },
+  { title: 'COVERED PARKING', desc: 'Every residence comes with three dedicated covered car parks, offering convenience, security, and ample space for your vehicles.', Icon: IconHome },
+  { title: '11-FOOT CEILING', desc: 'With an approximate 11-foot floor-to-floor height, every home feels remarkably spacious, airy, and elegantly grand.', Icon: IconMountain },
+  { title: 'TWIN-TOWER DEVELOPMENT', desc: 'An exclusive twin-tower development thoughtfully planned to offer low-density living with enhanced privacy and a more peaceful lifestyle.', Icon: IconBuilding },
 ]
 
 const Highlights = ({ setIsOpen }) => (
