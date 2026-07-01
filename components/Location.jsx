@@ -87,7 +87,7 @@ const Location = () => {
               background: '#EAE5DC'
             }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5774.8979527775255!2d77.02819195000001!3d28.59210705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ab75625f03d%3A0xb08470618ba72e09!2sSector%2017%20Dwarka%2C%20Kakrola%2C%20Delhi%2C%20110078!5e1!3m2!1sen!2sin!4v1782723780572!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.423394811025!2d77.02330077549941!3d28.593038375686245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b1eed004843%3A0xcacd1cf9cc740ffd!2sEldeco%20Camelot!5e1!3m2!1sen!2sin!4v1782901780360!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '420px', display: 'block' }}
