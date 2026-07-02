@@ -7,7 +7,7 @@ const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 
 const Footer = () => (
-  <footer style={{ background: 'var(--color-dark)', color: '#fff' }}>
+  <footer style={{ background: '#000000', color: '#fff' }}>
 
     <div style={{ maxWidth: '860px', margin: '0 auto', padding: '56px 24px 32px', textAlign: 'center' }}>
       <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: F_JOST, marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }} data-aos="fade-in">

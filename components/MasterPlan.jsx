@@ -46,7 +46,7 @@ const MasterPlan = ({ setIsOpen }) => {
             }}>
               {/* Tab header */}
               <div style={{
-                background: 'linear-gradient(135deg, #111827, #1f2937)',
+                background: '#000000',
                 padding: '16px 20px', position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{

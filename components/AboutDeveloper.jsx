@@ -153,7 +153,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
 
           {/* Dark Header */}
           <div style={{
-            background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))',
+            background: '#000000',
             padding: '18px 24px', position: 'relative', overflow: 'hidden',
           }}>
             <div style={{
@@ -227,7 +227,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
 
           {/* Form Header */}
           <div style={{
-            background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))',
+            background: '#000000',
             padding: '18px 24px', position: 'relative', overflow: 'hidden'
           }}>
             <div style={{

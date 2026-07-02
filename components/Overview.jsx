@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import Image from 'next/image'
 import { overviewImage } from '../lib/images'
 
@@ -48,45 +49,101 @@ const infoItems = [
   { label: 'Architect',          value: 'Hafeez Contractor', bgColor: '#F2FAFD' },
 ]
 
-const Overview = ({ setIsOpen }) => (
-  <section
-    id="overview"
-    style={{ background: '#fff', padding: '72px 0 80px', borderBottom: '1px solid #f0ede6' }}
-  >
-    <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]">
+const Overview = ({ setIsOpen }) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+  return (
+    <section
+      id="overview"
+      style={{ background: '#fff', padding: '72px 0 80px', borderBottom: '1px solid #f0ede6' }}
+    >
+      <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]">
       
-      {/* ── Section Heading ── */}
-      <div style={{ marginBottom: '40px', textAlign: 'left' }} data-aos="fade-up">
-        <h2 style={{
-          fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
-          color: '#3A2A0E', letterSpacing: '0.1em',
-          textTransform: 'uppercase', margin: '0 0 10px 0',
-          display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px'
-        }}>
-          Welcome to Eldeco Camelot
-        </h2>
-        <h3 style={{
-          fontFamily: F_JOST, fontWeight: '600', fontSize: '16px',
-          color: '#C9A96E', letterSpacing: '0.05em',
-          textTransform: 'capitalize', margin: 0,
-        }}>
-          Premium Residential Project in Sector 17, Dwarka
-        </h3>
-      </div>
-
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
         
         {/* ── Left Side: Text Content ── */}
         <div className="w-full lg:w-1/2" data-aos="fade-right">
           
+          {/* ── Section Heading ── */}
+          <div style={{ marginBottom: '40px', textAlign: 'left' }} data-aos="fade-up">
+            <h2 style={{
+              fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
+              color: '#3A2A0E', letterSpacing: '0.1em',
+              textTransform: 'uppercase', margin: '0 0 10px 0',
+              display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px'
+            }}>
+              Welcome to Eldeco Camelot
+            </h2>
+            <h3 style={{
+              fontFamily: F_JOST, fontWeight: '600', fontSize: '16px',
+              color: '#C9A96E', letterSpacing: '0.05em',
+              textTransform: 'capitalize', margin: 0,
+            }}>
+              Premium Residential Project in Sector 17, Dwarka
+            </h3>
+          </div>
+          
           {/* Paragraphs */}
           <p style={{
             fontFamily: F_SANS, fontSize: '14.5px', color: '#4A4540',
             lineHeight: 1.9,
-            marginTop: 0, marginBottom: '20px',
+            marginTop: 0, marginBottom: '24px',
             textAlign: 'justify',
           }}>
-            <strong>Eldeco Camelot</strong> is all set to be the most experiential and premium residential project in the prime corridor of <strong>Sector 17, Dwarka</strong>. Crafted with a <strong>low-density concept</strong> in mind, the entire project spans <strong>1.8 acres</strong> and comprises <strong>2 boutique high-stilt towers and 95 residences</strong>. Where Dwarka is conventionally marked by mid-rise and independent housing projects, Eldeco Camelot Dwarka adds a distinct identity as one of the few <strong>high-rise communities, rising to G+20</strong> and making a prominent difference in Dwarka's Skyline. The first tower features 2 apartments per core, while the second tower offers 3 per core, providing residents with privacy and exclusivity. Designed by the renowned <strong>Hafeez Contractor</strong>, the <strong>double-height grand entrance lobby</strong> features a majestic arrival court lined with premium architecture and ambient lighting.
+            <strong>Eldeco Camelot</strong> is all set to be the most experiential and premium residential project in the prime corridor of <strong>Sector 17, Dwarka</strong>. Crafted with a <strong>low-density concept</strong> in mind, the entire project spans <strong>1.8 acres</strong> and comprises <strong>2 boutique high-stilt towers and 95 residences</strong>. Where Dwarka is conventionally marked by mid-rise and independent housing projects, Eldeco Camelot Dwarka adds a distinct identity as one of the few <strong>high-rise communities, rising to G+20</strong> and making a prominent difference in Dwarka's Skyline.
+            {isExpanded ? (
+              <>
+                {" "}The first tower features 2 apartments per core, while the second tower offers 3 per core, providing residents with privacy and exclusivity. Designed by the renowned <strong>Hafeez Contractor</strong>, the <strong>double-height grand entrance lobby</strong> features a majestic arrival court lined with premium architecture and ambient lighting.
+                {" "}
+                <button
+                  onClick={() => setIsExpanded(false)}
+                  style={{
+                    fontFamily: F_JOST,
+                    fontSize: '12px',
+                    fontWeight: '700',
+                    color: '#C9A96E',
+                    border: 'none',
+                    background: 'none',
+                    padding: '0 0 1px 0',
+                    borderBottom: '1px solid #C9A96E',
+                    cursor: 'pointer',
+                    marginLeft: '6px',
+                    letterSpacing: '0.05em',
+                    display: 'inline-block',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#3A2A0E'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#C9A96E'}
+                >
+                  READ LESS
+                </button>
+              </>
+            ) : (
+              <>
+                {" ... "}
+                <button
+                  onClick={() => setIsExpanded(true)}
+                  style={{
+                    fontFamily: F_JOST,
+                    fontSize: '12px',
+                    fontWeight: '700',
+                    color: '#C9A96E',
+                    border: 'none',
+                    background: 'none',
+                    padding: '0 0 1px 0',
+                    borderBottom: '1px solid #C9A96E',
+                    cursor: 'pointer',
+                    marginLeft: '6px',
+                    letterSpacing: '0.05em',
+                    display: 'inline-block',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#3A2A0E'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#C9A96E'}
+                >
+                  READ MORE
+                </button>
+              </>
+            )}
           </p>
 
           {/* Info Box */}
@@ -144,6 +201,7 @@ const Overview = ({ setIsOpen }) => (
       </div>
     </div>
   </section>
-)
+  )
+}
 
 export default Overview

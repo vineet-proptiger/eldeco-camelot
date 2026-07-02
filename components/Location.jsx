@@ -43,7 +43,7 @@ const Location = () => {
               {/* Table Header */}
               <div style={{
                 display: 'grid', gridTemplateColumns: '1.2fr 1fr',
-                background: '#9b2c2c', color: '#fff',
+                background: '#000000', color: '#fff',
                 fontFamily: F_JOST, fontWeight: '600', fontSize: '13.5px',
                 letterSpacing: '0.04em', textTransform: 'uppercase',
                 borderBottom: '1px solid #D5C2A8',

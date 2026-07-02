@@ -80,14 +80,14 @@ const Pricing = ({ setIsOpen }) => {
           <CurvedCorners />
 
           {/* Grid Container for 2 Units */}
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#D5C2A8]">
             {units.map((unit, idx) => (
               <div key={idx} className="p-8 md:p-10 relative flex flex-col justify-between">
                 <div>
                   {/* Title & Size */}
                   <h3
                     className="text-2xl font-bold mb-2"
-                    style={{ fontFamily: F_SANS, color: PRIMARY, letterSpacing: "0.02em" }}
+                    style={{ fontFamily: F_SANS, color: "#000000", letterSpacing: "0.02em" }}
                   >
                     {unit.type}
                   </h3>
