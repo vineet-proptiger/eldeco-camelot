@@ -278,29 +278,28 @@ const Hero = ({ setIsOpen }) => {
             width: 100%;
           }
 
-          .hero-cta-row > button,
-          .hero-cta-row > a {
+          .hero-cta-row > div {
             width: 260px !important;
+            display: flex !important;
+            justify-content: center !important;
+          }
+
+          .hero-cta-row > div > div,
+          .hero-cta-row > div > button {
+            width: 100% !important;
             justify-content: center !important;
             text-align: center;
             padding: 12px 10px !important;
             font-size: 11px !important;
-            white-space: normal !important;
+            white-space: nowrap !important;
             box-shadow: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            box-sizing: border-box !important;
           }
-          
-          .hero-cta-row > div {
-            width: 260px !important;
-            justify-content: center !important;
-            text-align: center;
-            white-space: normal !important;
-          }
-          
-          .hero-cta-row > a.btn-brand {
-            background: linear-gradient(90deg, #D4AF37 0%, #F9E08A 100%) !important;
-            color: #111827 !important;
-            border-color: transparent !important;
-            font-weight: 800 !important;
+
+          .hero-cta-row > div > div .hero-price-amt {
+            font-size: 12px !important;
           }
 
           .hero-btn-one {
