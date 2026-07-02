@@ -61,7 +61,7 @@ const Overview = ({ setIsOpen }) => {
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
         
         {/* ── Left Side: Text Content ── */}
-        <div className="w-full lg:w-1/2" data-aos="fade-right">
+        <div className="w-full lg:w-1/2">
           
           {/* ── Section Heading ── */}
           <div style={{ marginBottom: '40px', textAlign: 'left' }}>
@@ -163,14 +163,14 @@ const Overview = ({ setIsOpen }) => {
                 padding: '20px 16px',
                 textAlign: 'left',
               }}>
-                <p data-aos="fade-right" data-aos-delay={`${(i + 1) * 100 + 100}`} style={{
+                <p style={{
                   fontFamily: F_JOST, fontSize: '10px', fontWeight: '500',
                   color: '#b5a99a', letterSpacing: '0.18em',
                   textTransform: 'uppercase', margin: '0 0 8px',
                 }}>
                   {item.label}:
                 </p>
-                <p data-aos="fade-right" data-aos-delay={`${(i + 1) * 100 + 200}`} className="whitespace-normal" style={{
+                <p className="whitespace-normal" style={{
                   fontFamily: F_JOST, fontSize: '12px', fontWeight: '700',
                   color: '#3A2A0E', letterSpacing: '0.05em',
                   textTransform: 'uppercase', margin: 0,
