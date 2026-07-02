@@ -143,6 +143,26 @@
   }
 }
 
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes error {
+  0% { border: 2px solid #000; }
+  100% { border: 2px solid var(--color-gold); }
+}
+
+.textclip-animate {
+  background-image: linear-gradient(-225deg, var(--color-gold) 0, var(--color-gold-dark) 29%, #000 67%, var(--color-gold) 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: 2s linear infinite textclip;
+}
+
 /* ─── Utility classes ────────────────────────────────────────── */
 .blink-price {
   animation: blinkPrice 0.9s step-end infinite;

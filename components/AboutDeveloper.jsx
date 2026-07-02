@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../lib/config'
 import { buildTrackingFields } from '../lib/formMeta'
 
@@ -8,6 +8,46 @@ const GOLD_DARK = 'var(--color-gold-dark)'
 const PRIMARY = 'var(--color-primary)'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
+
+const TypewriterText = ({ text }) => {
+  const [displayedText, setDisplayedText] = useState('')
+  const [isTyping, setIsTyping] = useState(false)
+  const textRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsTyping(true)
+        } else {
+          setIsTyping(false)
+          setDisplayedText('')
+        }
+      },
+      { threshold: 0.2 }
+    )
+    if (textRef.current) observer.observe(textRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isTyping) return
+    let i = 0
+    const interval = setInterval(() => {
+      setDisplayedText(text.substring(0, i))
+      i += 4
+      if (i > text.length + 4) clearInterval(interval)
+    }, 10) // Speed of typing
+    return () => clearInterval(interval)
+  }, [isTyping, text])
+
+  return (
+    <span ref={textRef} style={{ display: 'block', minHeight: '150px' }}>
+      {displayedText}
+      <span className="animate-pulse" style={{ color: 'var(--color-gold)' }}>|</span>
+    </span>
+  )
+}
 
 const ContactForm = () => {
   const [form, setForm] = useState({ fullname: '', phone: '', email: '' })
@@ -185,7 +225,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
           <div style={{ padding: '24px 28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <p style={{ color: '#555', fontFamily: F_SANS, lineHeight: 1.85, fontSize: '14px', margin: '0 0 14px', textAlign: 'justify' }}>
-                Since 1987, Eldeco Group has been relentless in its approach to providing world-class services in real estate and has a varied portfolio comprising Integrated and High-Tech Townships, Group Housing, SCOs, Shopping malls, and Hotels to name a select few. The journey of Eldeco Group started when first-generation entrepreneur Mr Rohtas Goel laid the foundations to undertake the Construction and Contracting business in 1987. Eldeco Group launched its first real estate project with executive floors in 2001 in Gurugram. From those humble beginnings to being listed in NSE and BSE in 2007 to becoming a company with a net worth of 1638 crores in 2020, Eldeco Group has come a long way.
+                <TypewriterText text="Since 1987, Eldeco Group has been relentless in its approach to providing world-class services in real estate and has a varied portfolio comprising Integrated and High-Tech Townships, Group Housing, SCOs, Shopping malls, and Hotels to name a select few. The journey of Eldeco Group started when first-generation entrepreneur Mr Rohtas Goel laid the foundations to undertake the Construction and Contracting business in 1987. Eldeco Group launched its first real estate project with executive floors in 2001 in Gurugram. From those humble beginnings to being listed in NSE and BSE in 2007 to becoming a company with a net worth of 1638 crores in 2020, Eldeco Group has come a long way." />
               </p>
             </div>
 
@@ -210,6 +250,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
 
             <button onClick={() => setIsOpen(true)}
               className="btn-gold"
+              data-aos="zoom-in" data-aos-delay="400"
               style={{ padding: '11px 28px', fontSize: '13px', width: '100%' }}>
               Know More
             </button>

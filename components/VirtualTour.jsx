@@ -73,7 +73,7 @@ const VirtualTour = ({ setIsOpen }) => {
       <div className="relative z-10 text-center text-white flex flex-col items-center">
 
         {/* Play Icon Circle */}
-        <div className="relative mb-10 flex items-center justify-center">
+        <div className="relative mb-10 flex items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
           <div className="ripple-btn">
             <svg className="w-6 h-6 md:w-8 md:h-8 ml-1 md:ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="5 3 19 12 5 21 5 3" />
@@ -85,7 +85,7 @@ const VirtualTour = ({ setIsOpen }) => {
         </div>
 
         {/* Text */}
-        <h2 style={{
+        <h2 data-aos="flip-left" data-aos-delay="500" style={{
           fontFamily: F_JOST,
           fontWeight: '500',
           letterSpacing: '0.18em',

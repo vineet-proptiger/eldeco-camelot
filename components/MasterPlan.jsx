@@ -199,6 +199,7 @@ const MasterPlan = ({ setIsOpen }) => {
                   Register to Unlock Floor Plan
                 </p>
                 <button onClick={() => setIsOpen(true)} className="btn-gold"
+                  data-aos="zoom-in" data-aos-delay="400"
                   style={{ padding: '11px 32px', fontSize: '13px', letterSpacing: '0.1em' }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

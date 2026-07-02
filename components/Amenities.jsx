@@ -60,17 +60,17 @@ const Amenities = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#e5e7eb]">
             {newAmenities.map((item, idx) => (
-              <div key={idx} className="bg-white flex flex-col items-center group" style={{
+              <div key={idx} data-aos="fade-up" data-aos-delay={(idx % 4) * 100} className="bg-white flex flex-col items-center group" style={{
                 padding: '48px 24px',
                 textAlign: 'center',
               }}>
                 {/* Icon */}
-                <div className="w-[80px] h-[80px] rounded-full flex items-center justify-center mb-6 text-white group-hover:scale-105 transition-transform duration-300" style={{ background: '#C9A96E' }}>
+                <div className="w-[80px] h-[80px] rounded-full flex items-center justify-center mb-6 text-white group-hover:scale-105 transition-transform duration-300" style={{ background: '#C9A96E' }} data-aos="zoom-in" data-aos-delay={((idx % 4) * 100) + 100}>
                   <item.icon size={36} strokeWidth={1.5} />
                 </div>
 
                 {/* Title */}
-                <h3 style={{
+                <h3 data-aos="fade-up" data-aos-delay={((idx % 4) * 100) + 200} style={{
                   fontFamily: F_JOST, fontSize: '15px', fontWeight: '700',
                   color: '#684C1B', letterSpacing: '0.05em', margin: '0 0 12px'
                 }}>
@@ -78,7 +78,7 @@ const Amenities = () => {
                 </h3>
 
                 {/* Description */}
-                <p style={{
+                <p data-aos="fade-up" data-aos-delay={((idx % 4) * 100) + 300} style={{
                   fontFamily: F_SANS, fontSize: '13px', color: '#6b7280',
                   lineHeight: 1.6, margin: 0,
                   textAlign: 'justify'

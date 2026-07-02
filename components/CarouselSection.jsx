@@ -114,14 +114,14 @@ const CarouselSection = ({ setIsOpen }) => {
           100% { width: 100%; }
         }
       `}} />
-      <div className="container mx-auto px-4 md:px-8 max-w-[1200px]">
+      <div className="container mx-auto px-4 md:px-8 max-w-[1200px]" data-aos="fade-up" data-aos-delay="100">
 
         {/* ── Header Row ── */}
         <div className="flex items-center justify-between mb-8 gap-6 w-full min-h-[50px]">
 
           {/* Centered Heading */}
           <div className="flex-1 flex justify-center lg:pl-32">
-            <h2 style={{
+            <h2 data-aos="flip-left" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '24px',
               color: '#3A2A0E', letterSpacing: '0.1em', margin: 0,
             }} className="text-center">Glimpses of Masterpiece</h2>
@@ -129,7 +129,7 @@ const CarouselSection = ({ setIsOpen }) => {
 
           {/* Right side Buttons */}
           <div className="flex items-center">
-            <button className="btn-brand hidden sm:flex" onClick={() => setIsOpen(true)} style={{ padding: '12px 24px', fontSize: '12px' }}>
+            <button className="btn-brand hidden sm:flex" onClick={() => setIsOpen(true)} data-aos="zoom-in" data-aos-delay="600" style={{ padding: '12px 24px', fontSize: '12px' }}>
               ENQUIRE NOW
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -140,7 +140,7 @@ const CarouselSection = ({ setIsOpen }) => {
         </div>
 
         {/* ── Main Sliding Track Gallery (Premium & Zero-Flash) ── */}
-        <div className="relative w-full overflow-hidden rounded-lg carousel-container">
+        <div className="relative w-full overflow-hidden rounded-lg carousel-container" data-aos="fade-up" data-aos-delay="200">
           <style dangerouslySetInnerHTML={{ __html: `
             .carousel-container { --slide-w: 100%; }
             @media (min-width: 768px) { .carousel-container { --slide-w: 65%; } }
@@ -166,14 +166,33 @@ const CarouselSection = ({ setIsOpen }) => {
                   fill
                   priority={idx === 0 || idx === 1 || Math.abs(idx - index) <= 1} // Preload active and adjacent images for instant rendering
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 900px"
-                  className="object-cover select-none pointer-events-none transition-transform duration-[800ms] ease-out group-hover:scale-110"
+                  className={`object-cover select-none pointer-events-none transition-transform duration-[6000ms] ease-out ${getRealIndex(idx) === getRealIndex(index) ? 'scale-110' : 'scale-100'}`}
                 />
                 
                 {/* Image Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8 lg:p-10 pb-5 md:pb-10 flex flex-col justify-end"
                      style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)', minHeight: '40%' }}>
-                    <h3 className="text-white text-base md:text-2xl font-bold mb-1 tracking-wide" style={{ fontFamily: F_JOST }}>{img.title}</h3>
-                    <p className="text-white/90 text-[11px] md:text-base leading-snug md:leading-relaxed max-w-2xl font-sans">{img.desc}</p>
+                    <h3 
+                      className="text-white text-base md:text-2xl font-bold mb-1 tracking-wide" 
+                      style={{ 
+                        fontFamily: F_JOST,
+                        opacity: getRealIndex(idx) === getRealIndex(index) ? 1 : 0,
+                        transform: getRealIndex(idx) === getRealIndex(index) ? 'translateY(0)' : 'translateY(20px)',
+                        transition: 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.3s'
+                      }}
+                    >
+                      {img.title}
+                    </h3>
+                    <p 
+                      className="text-white/90 text-[11px] md:text-base leading-snug md:leading-relaxed max-w-2xl font-sans"
+                      style={{
+                        opacity: getRealIndex(idx) === getRealIndex(index) ? 1 : 0,
+                        transform: getRealIndex(idx) === getRealIndex(index) ? 'translateY(0)' : 'translateY(20px)',
+                        transition: 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.45s'
+                      }}
+                    >
+                      {img.desc}
+                    </p>
                     
                     {/* Progress Bar Container */}
                     <div className="absolute bottom-0 left-0 right-0 h-1 md:h-1.5 bg-white/20">
@@ -203,13 +222,13 @@ const CarouselSection = ({ setIsOpen }) => {
 
         {/* ── Bottom Arrows ── */}
         <div className="flex items-center gap-3 mt-6 ml-2">
-          <button onClick={prevSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
+          <button onClick={prevSlide} data-aos="fade-up" data-aos-delay="300" className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="19" y1="12" x2="5" y2="12" />
               <polyline points="12 19 5 12 12 5" />
             </svg>
           </button>
-          <button onClick={nextSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
+          <button onClick={nextSlide} data-aos="fade-up" data-aos-delay="400" className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />

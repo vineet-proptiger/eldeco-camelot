@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { heroImages } from '../lib/images'
 
@@ -10,6 +10,17 @@ const slides = [
 
 const Hero = ({ setIsOpen }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isVisible, setIsVisible] = useState(true)
+  const heroRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting)
+    }, { threshold: 0.1 })
+    
+    if (heroRef.current) observer.observe(heroRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -349,72 +360,79 @@ const Hero = ({ setIsOpen }) => {
       <div className="hero-overlay" />
 
       {/* ── Content overlay ── */}
-      <div className="hero-content">
+      <div className="hero-content" ref={heroRef}>
+        {isVisible && (
+          <>
+            {/* Main Heading */}
+            <h1 className="hero-title" data-aos="zoom-in-up" data-aos-delay="0">
+             Eldeco Camelot
+            </h1>
 
-        {/* Main Heading */}
-        <h1 className="hero-title">
-         Eldeco Camelot
-        </h1>
-
-        {/* Subtitle */}
-        <p className="hero-subtitle">
-          <span style={{ fontSize: '0.85em', fontWeight: 500, textTransform: 'none' }}>At Sector 17, Dwarka Delhi</span>
-        </p>
-        {/* Bullet Points */}
-        <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          {[
-            '270° Green View Residences',
-            'Expansive Wraparound Balconies',
-            'VRV Air-Conditioned Luxury Homes',
-            '3 Car Parks with Every Residence',
-            'Booking Amount ₹10 Lakhs*'
-          ].map((text, i) => (
-            <div key={i} className="hero-bullet-item" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #C9A96E)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, backgroundColor: '#fff', borderRadius: '50%', padding: '2px' }}>
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span className="hero-bullet-text" style={{ color: '#fff', fontFamily: 'var(--font-sans), Open Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 18px)', fontWeight: '500', letterSpacing: '0.02em', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
-                {text}
-              </span>
+            {/* Subtitle */}
+            <p className="hero-subtitle" data-aos="fade-right" data-aos-delay="100">
+              <span style={{ fontSize: '0.85em', fontWeight: 500, textTransform: 'none' }}>At Sector 17, Dwarka Delhi</span>
+            </p>
+            {/* Bullet Points */}
+            <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {[
+                '270° Green View Residences',
+                'Expansive Wraparound Balconies',
+                'VRV Air-Conditioned Luxury Homes',
+                '3 Car Parks with Every Residence',
+                'Booking Amount ₹10 Lakhs*'
+              ].map((text, i) => (
+                <div key={i} className="hero-bullet-item" data-aos="fade-left" data-aos-delay={(i * 200) + 300} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #C9A96E)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, backgroundColor: '#fff', borderRadius: '50%', padding: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span className="hero-bullet-text" style={{ color: '#fff', fontFamily: 'var(--font-sans), Open Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 18px)', fontWeight: '500', letterSpacing: '0.02em', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+                    {text}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        {/* Restored Subtitle */}
-        <p className="hero-price-line" style={{ marginBottom: '0px' }}>
-          3 &amp; 4 BR   Luxurious Apartments
-        </p>
+            {/* Restored Subtitle */}
+            <p className="hero-price-line" data-aos="fade-up" data-aos-delay="1300" style={{ marginBottom: '0px' }}>
+              3 &amp; 4 BR   Luxurious Apartments
+            </p>
 
-        {/* CTA Row */}
-        <div className="hero-cta-row" style={{ marginTop: '16px' }}>
+            {/* CTA Row */}
+            <div className="hero-cta-row" style={{ marginTop: '16px' }}>
 
-          {/* Button 1 — Static Price Badge */}
-          <div
-            className="btn-gold-outline hero-btn-one"
-            style={{ fontSize: '14px', padding: '11px 22px', pointerEvents: 'none', fontWeight: '700', textTransform: 'none' }}
-          >
-            Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>₹ 7.42 Cr*</span>
-          </div>
+              {/* Button 1 — Static Price Badge */}
+              <div data-aos="flip-up" data-aos-delay="1400">
+                <div
+                  className="btn-gold-outline hero-btn-one"
+                  style={{ fontSize: '14px', padding: '11px 22px', pointerEvents: 'none', fontWeight: '700', textTransform: 'none' }}
+                >
+                  Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>₹ 7.42 Cr*</span>
+                </div>
+              </div>
 
           {/* Button 2 — Popup Trigger (global btn-brand) */}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="btn-brand"
-            style={{ fontSize: '12px', padding: '11px 22px' }}
-          >
-            {/* Calendar icon */}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            Get Details
-          </button>
+          <div data-aos="flip-up" data-aos-delay="1500">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="btn-brand"
+              style={{ fontSize: '12px', padding: '11px 22px' }}
+            >
+              {/* Calendar icon */}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Get Details
+            </button>
+          </div>
 
         </div>
-
+          </>
+        )}
       </div>
+
     </section>
   )
 }

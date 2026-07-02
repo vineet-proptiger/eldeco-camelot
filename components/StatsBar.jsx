@@ -30,8 +30,8 @@ const StatsBar = () => (
           gap: '10px',
           padding: '6px 28px',
         }}
-          data-aos="fade-up"
-          data-aos-delay={i * 100}
+          data-aos={i % 2 === 0 ? "fade-up" : "fade-down"}
+          data-aos-delay={i === 0 ? 500 : i === 1 ? 400 : i === 2 ? 300 : 400}
         >
           <span style={{
             fontFamily: F_JOST,

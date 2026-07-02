@@ -130,8 +130,8 @@ const Highlights = ({ setIsOpen }) => (
     <div className="px-4 sm:px-8" style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
       {/* Heading */}
-      <div style={{ textAlign: 'center', marginBottom: '40px' }} data-aos="fade-up">
-        <h2 style={{
+      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <h2 data-aos="flip-left" data-aos-delay="500" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
           color: '#684C1B', letterSpacing: '0.1em',
           textTransform: 'uppercase', margin: 0,
@@ -143,7 +143,7 @@ const Highlights = ({ setIsOpen }) => (
 
       {/* Bordered container with curved concave corner notches */}
       <div
-        data-aos="fade-up"
+        data-aos="fade-right"
         data-aos-delay="100"
         style={{
           position: 'relative',
@@ -155,7 +155,7 @@ const Highlights = ({ setIsOpen }) => (
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-[1px]" style={{ background: BORDER_COLOR }}>
           {highlights.map(({ title, desc, Icon }, i) => (
-            <div key={i} style={{
+            <div key={i} data-aos="flip-left" data-aos-delay="500" style={{
               padding: '36px 20px 28px',
               textAlign: 'center',
               background: BG,
@@ -171,7 +171,7 @@ const Highlights = ({ setIsOpen }) => (
               </div>
 
               {/* Title */}
-              <h3 style={{
+              <h3 data-aos="fade-up" data-aos-delay="300" style={{
                 fontFamily: F_JOST, fontSize: '12.5px', fontWeight: '700',
                 color: '#3A2A0E', letterSpacing: '0.1em',
                 textTransform: 'uppercase', margin: '0 0 12px',

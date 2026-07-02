@@ -37,7 +37,7 @@ const Location = () => {
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
 
           {/* LEFT — Accordion */}
-          <div className="w-full lg:w-[45%]" data-aos="fade-right">
+          <div className="w-full lg:w-[45%]" data-aos="fade-right" data-aos-delay="100">
             <div style={{ border: '1px solid #D5C2A8', background: '#EAE5DC' }}>
 
               {/* Table Header */}
@@ -57,7 +57,7 @@ const Location = () => {
                 overflow: 'hidden',
               }}>
                 {locationItems.map((item, i) => (
-                  <div key={i} style={{
+                  <div key={i} data-aos="fade-up" data-aos-delay={(i * 100)} style={{
                     display: 'grid', gridTemplateColumns: '1.2fr 1fr',
                     background: i % 2 === 0 ? '#F4EFE6' : '#EAE5DC',
                     color: '#684C1B', fontFamily: F_SANS,
@@ -78,7 +78,7 @@ const Location = () => {
           </div>
 
           {/* RIGHT — Map */}
-          <div className="w-full lg:flex-1" data-aos="fade-left" style={{ minHeight: '420px' }}>
+          <div className="w-full lg:flex-1" data-aos="fade-left" data-aos-delay="150" style={{ minHeight: '420px' }}>
             <div style={{
               overflow: 'hidden',
               border: '1px solid #D5C2A8',

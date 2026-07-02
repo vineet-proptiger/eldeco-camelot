@@ -64,8 +64,8 @@ const Overview = ({ setIsOpen }) => {
         <div className="w-full lg:w-1/2" data-aos="fade-right">
           
           {/* ── Section Heading ── */}
-          <div style={{ marginBottom: '40px', textAlign: 'left' }} data-aos="fade-up">
-            <h2 style={{
+          <div style={{ marginBottom: '40px', textAlign: 'left' }}>
+            <h2 data-aos="flip-right" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
               color: '#3A2A0E', letterSpacing: '0.1em',
               textTransform: 'uppercase', margin: '0 0 10px 0',
@@ -83,7 +83,7 @@ const Overview = ({ setIsOpen }) => {
           </div>
           
           {/* Paragraphs */}
-          <p style={{
+          <p data-aos="flip-down" data-aos-delay="500" style={{
             fontFamily: F_SANS, fontSize: '14.5px', color: '#4A4540',
             lineHeight: 1.9,
             marginTop: 0, marginBottom: '24px',
@@ -158,19 +158,19 @@ const Overview = ({ setIsOpen }) => {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-[1px]" style={{ background: '#D5C2A8' }}>
             {infoItems.map((item, i) => (
-              <div key={i} className="flex flex-col justify-center" style={{
+              <div key={i} data-aos="fade-up" data-aos-delay={`${(i + 1) * 100}`} className="flex flex-col justify-center" style={{
                 background: item.bgColor || '#fff',
                 padding: '20px 16px',
                 textAlign: 'left',
               }}>
-                <p style={{
+                <p data-aos="fade-right" data-aos-delay={`${(i + 1) * 100 + 100}`} style={{
                   fontFamily: F_JOST, fontSize: '10px', fontWeight: '500',
                   color: '#b5a99a', letterSpacing: '0.18em',
                   textTransform: 'uppercase', margin: '0 0 8px',
                 }}>
                   {item.label}:
                 </p>
-                <p className="whitespace-normal" style={{
+                <p data-aos="fade-right" data-aos-delay={`${(i + 1) * 100 + 200}`} className="whitespace-normal" style={{
                   fontFamily: F_JOST, fontSize: '12px', fontWeight: '700',
                   color: '#3A2A0E', letterSpacing: '0.05em',
                   textTransform: 'uppercase', margin: 0,

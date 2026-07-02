@@ -106,6 +106,7 @@ const PaymentPlan = ({ setIsOpen }) => (
       {/* CTA */}
       <div style={{ textAlign: 'center', marginTop: '32px' }} data-aos="fade-up">
         <button onClick={() => setIsOpen(true)} className="btn-gold"
+          data-aos="zoom-in" data-aos-delay="400"
           style={{ padding: '13px 44px', letterSpacing: '0.08em' }}>
           Get Detailed Payment Schedule
         </button>

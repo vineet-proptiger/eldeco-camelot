@@ -60,8 +60,8 @@ const Pricing = ({ setIsOpen }) => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* NEW HEADING STYLE */}
-        <div style={{ textAlign: 'center', marginBottom: '40px' }} data-aos="fade-up">
-          <h2 style={{
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h2 data-aos="flip-left" data-aos-delay="500" style={{
             fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
             color: '#684C1B', letterSpacing: '0.1em',
             textTransform: 'uppercase', margin: 0,
@@ -86,6 +86,7 @@ const Pricing = ({ setIsOpen }) => {
                 <div>
                   {/* Title & Size */}
                   <h3
+                    data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="500"
                     className="text-2xl font-bold mb-2"
                     style={{ fontFamily: F_SANS, color: "#000000", letterSpacing: "0.02em" }}
                   >
@@ -99,7 +100,7 @@ const Pricing = ({ setIsOpen }) => {
                   </div>
 
                   {/* Price Section */}
-                  <div className="mb-8">
+                  <div className="mb-8" data-aos={idx % 2 === 0 ? "flip-right" : "flip-left"} data-aos-delay="500">
                     <span className="text-[10px] text-gray-400 uppercase tracking-[0.15em] font-medium block mb-1" style={{ fontFamily: F_SANS }}>Starting At</span>
                     <div className="flex items-baseline gap-3">
                       {unit.oldPrice && (
@@ -116,7 +117,7 @@ const Pricing = ({ setIsOpen }) => {
                   {/* Features List */}
                   <div className="space-y-4 mb-8">
                     {unit.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-3">
+                      <div key={fIdx} data-aos="fade-left" data-aos-delay={(fIdx * 100) + 200} className="flex items-start gap-3">
                         <div className="mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-amber-50">
                           <Check size={12} strokeWidth={3} style={{ color: GOLD }} />
                         </div>
@@ -128,6 +129,7 @@ const Pricing = ({ setIsOpen }) => {
 
                 {/* Button */}
                 <button
+                  data-aos="flip-right" data-aos-delay="500"
                   onClick={() => setIsOpen(true)}
                   className="btn-gold w-full py-3.5 text-sm tracking-widest uppercase transition-all duration-300 font-bold"
                   style={{ borderRadius: "8px" }}

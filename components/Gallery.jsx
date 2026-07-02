@@ -57,7 +57,7 @@ const Gallery = ({ setIsOpen }) => {
         <div className="flex flex-col items-center justify-center mb-10">
           <div className="flex items-center justify-center">
             <ArcIcon />
-            <h2 style={{
+            <h2 data-aos="flip-left" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
               color: '#684C1B', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
             }} className="text-center">Eldeco Camelot GALLERY</h2>
@@ -65,7 +65,7 @@ const Gallery = ({ setIsOpen }) => {
         </div>
 
         {/* ── Image Grid ── */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 transition-all duration-500 ease-in-out">
+        <div data-aos="fade-up" data-aos-delay="100" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 transition-all duration-500 ease-in-out">
           {visibleImages.map((img, idx) => (
             <div 
               key={idx}
