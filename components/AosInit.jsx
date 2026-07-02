@@ -4,7 +4,7 @@ import AOS from 'aos'
 
 export default function AosInit() {
   useEffect(() => {
-    AOS.init({ duration: 700, once: false, mirror: true, offset: 60, easing: 'ease-out-cubic' })
+    AOS.init({ duration: 700, once: true, mirror: false, offset: 40, easing: 'ease-out-cubic' })
   }, [])
   return null
 }
