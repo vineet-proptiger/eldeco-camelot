@@ -279,7 +279,8 @@ const Hero = ({ setIsOpen }) => {
           }
 
           .hero-cta-row > div {
-            width: 260px !important;
+            width: 100% !important;
+            max-width: 340px !important;
             display: flex !important;
             justify-content: center !important;
           }
@@ -290,7 +291,7 @@ const Hero = ({ setIsOpen }) => {
             justify-content: center !important;
             text-align: center;
             padding: 12px 10px !important;
-            font-size: 11px !important;
+            font-size: 15px !important;
             white-space: nowrap !important;
             box-shadow: none !important;
             display: inline-flex !important;
@@ -299,7 +300,7 @@ const Hero = ({ setIsOpen }) => {
           }
 
           .hero-cta-row > div > div .hero-price-amt {
-            font-size: 12px !important;
+            font-size: 16.5px !important;
           }
 
           .hero-btn-one {

@@ -148,6 +148,10 @@ const Overview = ({ setIsOpen }) => {
 
           {/* Info Box */}
           <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-offset="0"
             style={{
               position: 'relative',
               border: '1px solid #D5C2A8',
@@ -158,7 +162,7 @@ const Overview = ({ setIsOpen }) => {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-[1px]" style={{ background: '#D5C2A8' }}>
             {infoItems.map((item, i) => (
-              <div key={i} data-aos="fade-up" data-aos-delay={`${(i + 1) * 100}`} className="flex flex-col justify-center" style={{
+              <div key={i} className="flex flex-col justify-center" style={{
                 background: item.bgColor || '#fff',
                 padding: '20px 16px',
                 textAlign: 'left',
