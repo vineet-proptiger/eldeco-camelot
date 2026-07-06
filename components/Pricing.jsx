@@ -7,18 +7,30 @@ const PRIMARY = "var(--color-primary, #3A2A0E)";
 const units = [
   {
     type: "3 BHK Residences",
-    size: "On Request",
+    size: "2800 Sq.Ft.",
     price: "₹ 7.42 Cr*",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Super Built-up: On Request",
+      "Super Built-up: 2800 Sq.Ft.",
       "Premium Specifications",
       "Luxury Finishes",
     ],
   },
   {
     type: "4 BHK Residences",
+    size: "3600 Sq.Ft.",
+    price: "Ask For Price",
+    oldPrice: null,
+    btnText: "Get Details",
+    features: [
+      "Super Built-up: 3600 Sq.Ft.",
+      "Premium Specifications",
+      "Luxury Finishes",
+    ],
+  },
+  {
+    type: "Penthouse",
     size: "On Request",
     price: "Ask For Price",
     oldPrice: null,
@@ -73,14 +85,14 @@ const Pricing = ({ setIsOpen }) => {
 
         {/* COMBINED PRICING BLOCK */}
         <div 
-          className="relative bg-white border border-[#D5C2A8] max-w-4xl mx-auto overflow-hidden"
+          className="relative bg-white border border-[#D5C2A8] max-w-5xl mx-auto overflow-hidden"
           data-aos="fade-up"
           data-aos-delay="100"
         >
           <CurvedCorners />
 
-          {/* Grid Container for 2 Units */}
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#D5C2A8]">
+          {/* Grid Container for 3 Units */}
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#D5C2A8]">
             {units.map((unit, idx) => (
               <div key={idx} className="p-8 md:p-10 relative flex flex-col justify-between">
                 <div>
