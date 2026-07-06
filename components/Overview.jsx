@@ -65,7 +65,7 @@ const Overview = ({ setIsOpen }) => {
           
           {/* ── Section Heading ── */}
           <div style={{ marginBottom: '40px', textAlign: 'left' }}>
-            <h2 data-aos="flip-right" data-aos-delay="500" style={{
+            <h2 data-aos="fade" data-aos-delay="200" data-aos-duration="800" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
               color: '#3A2A0E', letterSpacing: '0.1em',
               textTransform: 'uppercase', margin: '0 0 10px 0',
@@ -83,7 +83,7 @@ const Overview = ({ setIsOpen }) => {
           </div>
           
           {/* Paragraphs */}
-          <p data-aos="flip-down" data-aos-delay="500" style={{
+          <p data-aos="fade" data-aos-delay="400" data-aos-duration="800" style={{
             fontFamily: F_SANS, fontSize: '14.5px', color: '#4A4540',
             lineHeight: 1.9,
             marginTop: 0, marginBottom: '24px',
@@ -148,10 +148,6 @@ const Overview = ({ setIsOpen }) => {
 
           {/* Info Box */}
           <div
-            data-aos="fade-up"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-            data-aos-offset="0"
             style={{
               position: 'relative',
               border: '1px solid #D5C2A8',
@@ -167,20 +163,22 @@ const Overview = ({ setIsOpen }) => {
                 padding: '20px 16px',
                 textAlign: 'left',
               }}>
-                <p style={{
-                  fontFamily: F_JOST, fontSize: '10px', fontWeight: '500',
-                  color: '#b5a99a', letterSpacing: '0.18em',
-                  textTransform: 'uppercase', margin: '0 0 8px',
-                }}>
-                  {item.label}:
-                </p>
-                <p className="whitespace-normal" style={{
-                  fontFamily: F_JOST, fontSize: '12px', fontWeight: '700',
-                  color: '#3A2A0E', letterSpacing: '0.05em',
-                  textTransform: 'uppercase', margin: 0,
-                }}>
-                  {item.value}
-                </p>
+                <div data-aos="fade" data-aos-delay={600 + i * 150} data-aos-duration="800" data-aos-once="true">
+                  <p style={{
+                    fontFamily: F_JOST, fontSize: '10px', fontWeight: '500',
+                    color: '#b5a99a', letterSpacing: '0.18em',
+                    textTransform: 'uppercase', margin: '0 0 8px',
+                  }}>
+                    {item.label}:
+                  </p>
+                  <p className="whitespace-normal" style={{
+                    fontFamily: F_JOST, fontSize: '12px', fontWeight: '700',
+                    color: '#3A2A0E', letterSpacing: '0.05em',
+                    textTransform: 'uppercase', margin: 0,
+                  }}>
+                    {item.value}
+                  </p>
+                </div>
               </div>
             ))}
             </div>
