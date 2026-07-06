@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { heroImages } from '../lib/images'
 
@@ -10,17 +10,6 @@ const slides = [
 
 const Hero = ({ setIsOpen }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isVisible, setIsVisible] = useState(true)
-  const heroRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting)
-    }, { threshold: 0.1 })
-    
-    if (heroRef.current) observer.observe(heroRef.current)
-    return () => observer.disconnect()
-  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -360,9 +349,8 @@ const Hero = ({ setIsOpen }) => {
       <div className="hero-overlay" />
 
       {/* ── Content overlay ── */}
-      <div className="hero-content" ref={heroRef}>
-        {isVisible && (
-          <>
+      <div className="hero-content">
+        <>
             {/* Main Heading */}
             <h1 className="hero-title" data-aos="zoom-in-up" data-aos-delay="0">
              Eldeco Camelot
@@ -429,8 +417,7 @@ const Hero = ({ setIsOpen }) => {
           </div>
 
         </div>
-          </>
-        )}
+        </>
       </div>
 
     </section>
