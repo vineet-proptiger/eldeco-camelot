@@ -50,7 +50,7 @@ const TypewriterText = ({ text }) => {
 }
 
 const ContactForm = () => {
-  const [form, setForm] = useState({ fullname: '', phone: '', email: '' })
+  const [form, setForm] = useState({ fullname: '', phone: '', email: '', honeypot: '' })
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
@@ -62,7 +62,9 @@ const ContactForm = () => {
 
   const submit = async (e) => {
     e.preventDefault()
-    if (!/^\d{10}$/.test(form.phone)) { setError('Enter valid 10-digit number'); return }
+    if (form.honeypot) return
+    if (form.phone.length !== 10) { setError('Enter valid 10-digit number'); return }
+    if (!/^[6-9]\d{9}$/.test(form.phone)) { setError('Phone number must start with 6, 7, 8, or 9'); return }
     setError(''); setLoading(true)
     const tracking = buildTrackingFields()
     const payload = new FormData()
@@ -131,6 +133,9 @@ const ContactForm = () => {
         <input name="email" value={form.email} onChange={handle} placeholder="Email Id (optional)"
           className="form-input" style={{ fontFamily: F_SANS, width: '100%' }} />
       </div>
+
+      {/* Honeypot field - invisible to humans, bots will fill it */}
+      <input type="text" name="honeypot" tabIndex="-1" autoComplete="off" value={form.honeypot} onChange={handle} style={{ display: 'none' }} />
 
       <div>
         <label style={{
